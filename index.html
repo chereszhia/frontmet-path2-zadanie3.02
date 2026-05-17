@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font: Karla -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main>
+    <div class="card">
+      <h1>Contact Us</h1>
+      
+      <form id="contactForm" novalidate>
+        <!-- Wiersz 1: Imię i Nazwisko -->
+        <div class="row">
+          <div class="input-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <span class="error-message" id="firstNameError">This field is required</span>
+          </div>
+          <div class="input-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <span class="error-message" id="lastNameError">This field is required</span>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="input-group full-width">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-message" id="emailError">Please enter a valid email address</span>
+        </div>
+
+        <!-- Query Type (Zamiast `div role="region"` używamy `<fieldset>`) -->
+        <fieldset class="input-group full-width">
+          <legend>Query Type *</legend>
+          <div class="radio-group">
+            <label class="radio-label" for="generalEnquiry">
+              <input type="radio" id="generalEnquiry" name="queryType" value="general">
+              <span class="custom-radio"></span>
+              General Enquiry
+            </label>
+            <label class="radio-label" for="supportRequest">
+              <input type="radio" id="supportRequest" name="queryType" value="support">
+              <span class="custom-radio"></span>
+              Support Request
+            </label>
+          </div>
+          <span class="error-message" id="queryTypeError">Please select a query type</span>
+        </fieldset>
+
+        <!-- Message -->
+        <div class="input-group full-width">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <span class="error-message" id="messageError">This field is required</span>
+        </div>
+
+        <!-- Zgoda -->
+        <div class="input-group full-width checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span class="custom-checkbox"></span>
+            I consent to being contacted by the team *
+          </label>
+          <span class="error-message" id="consentError">To submit this form, please consent to being contacted</span>
+        </div>
+
+        <!-- Przycisk Submit -->
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <!-- Sukces Toast -->
+    <div id="successToast" class="toast" role="status" aria-live="polite">
+      <div class="toast-content">
+        <img src="./assets/images/icon-success-check.svg" alt="" aria-hidden="true">
+        <strong>Message Sent!</strong>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
